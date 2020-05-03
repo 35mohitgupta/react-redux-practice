@@ -28,11 +28,15 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchUsers: () => dispatch(fetchUsers())
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         fetchUsers: () => dispatch(fetchUsers())
+//     }
+// }
 
+//Alternate Approach
+const mapDispatchToProps = {
+    fetchUsers
+}
 
 export default connect(mapStateToProps,mapDispatchToProps)(UserContainer)
