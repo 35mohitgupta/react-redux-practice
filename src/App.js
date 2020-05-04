@@ -4,6 +4,7 @@ import './App.css';
 import { Provider } from 'react-redux'
 import store from './redux/store';
 import UserContainer from './component/UserContainer';
+import UsingMemoizedSelectorWithProp from './component/UsingMemoizedSelectorWithProp';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <div className="App">
         {/* <CakeContainer/> */}
         <UserContainer/>
+        <UsingMemoizedSelectorWithProp prefix="M"/>
+        <UsingMemoizedSelectorWithProp prefix="K"/>
       </div>
     </Provider>
   );

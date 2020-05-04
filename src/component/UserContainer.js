@@ -3,20 +3,21 @@ import { fetchUsers } from '../redux/user/userActions'
 import {connect} from 'react-redux'
 
 function UserContainer({loading, users, error, fetchUsers}) {
-    
     useEffect(()=>{
         fetchUsers()
     },[fetchUsers])
     return (
-        loading?<h2>Loading...</h2>:
-        error?<h2>error</h2>:(
+        loading?<h2>LOADING...</h2>:
+        error? <h2>{error}</h2>:
+        (
             <div>
-                <h2>User List</h2>
+                <h2>Usernames ...</h2>
                 <div>
-                    {users && users.map(user => <p key = {user.id}>{user.username}</p>)}
+                    {users && users.map(user => <p key={user.id}>{user.username}</p>)}
                 </div>
             </div>
-        )
+    
+    )
     )
 }
 
@@ -28,15 +29,11 @@ const mapStateToProps = (state) => {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         fetchUsers: () => dispatch(fetchUsers())
-//     }
-// }
-
-//Alternate Approach
-const mapDispatchToProps = {
-    fetchUsers
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchUsers: () => dispatch(fetchUsers())
+    }
 }
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(UserContainer)
