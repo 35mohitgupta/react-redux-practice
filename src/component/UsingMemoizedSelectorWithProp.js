@@ -14,7 +14,7 @@ function UsingMemoizedSelectorWithProp({prefix, filteredUsers}) {
 
 const makeGetFilteredUsersSelector = () => {
     return createSelector(
-        state => state.users,
+        state => state.users.users,
         (_,props) => props.prefix,
         (users,prefix) => users.filter(user => user.username.indexOf(prefix)===0)
     )

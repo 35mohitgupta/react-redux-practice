@@ -23,9 +23,9 @@ function UserContainer({loading, users, error, fetchUsers}) {
 
 const mapStateToProps = (state) => {
     return {
-        loading: state.loading,
-        users: state.users,
-        error: state.error
+        loading: state.users.loading,
+        users: state.users.users,
+        error: state.users.error
     }
 }
 

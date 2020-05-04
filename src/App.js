@@ -3,8 +3,9 @@ import './App.css';
 // import CakeContainer from './component/CakeContainer';
 import { Provider } from 'react-redux'
 import store from './redux/store';
-import UserContainer from './component/UserContainer';
-import UsingMemoizedSelectorWithProp from './component/UsingMemoizedSelectorWithProp';
+// import UserContainer from './component/UserContainer';
+// import UsingMemoizedSelectorWithProp from './component/UsingMemoizedSelectorWithProp';
+import UsingReactReduxHooks from './component/UsingReactReduxHooks';
 
 
 function App() {
@@ -12,9 +13,10 @@ function App() {
     <Provider store = {store}>
       <div className="App">
         {/* <CakeContainer/> */}
-        <UserContainer/>
+        {/* <UserContainer/>
         <UsingMemoizedSelectorWithProp prefix="M"/>
-        <UsingMemoizedSelectorWithProp prefix="K"/>
+        <UsingMemoizedSelectorWithProp prefix="K"/> */}
+        <UsingReactReduxHooks/>
       </div>
     </Provider>
   );
